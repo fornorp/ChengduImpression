@@ -1,5 +1,11 @@
+<script src="../pkgs/echarts.min.js"></script>
 # The Exploration of Landscape of Chengdu
 
+<html><body><p><font size="4" color="gray">
+The state comes into existence, originating in the bare needs of life, and continuing in existence for the sake of a good life. 
+
+-- The Politics Of Aristotle, by Aristotle
+</font></p></body></html>
 
 ## Change in Times
 ### Overview of Economy
@@ -498,6 +504,162 @@ In addition to employment, the level of growth in personal income can reflect th
 	]
 }
 ```
+
+
+
+## Rapid urban expansion:The microcosm of urbanization of China
+
+### Population
+The Population of Chengdu in 2009 was 9339734, increasing at an average annual rate of 6.8%
+since 2000. Although the increase speed has slowed down since 2010, its population annual increase rate is much higher than those of Asia and the world.
+					
+<table width="800" style="margin-left: auto; margin-right: auto;">
+        <tr>
+            <td width="400">
+```chart
+{
+    title: {
+        text: 'Population',
+		subtext:'Million'
+    },
+    tooltip: {
+        trigger: 'axis'
+    },
+    legend: {
+		x: "20%",
+		top: '10%',
+        data:['Chengdu Population']
+    },
+    toolbox: {
+        show: true,
+        feature: {
+            dataZoom: {
+                yAxisIndex: 'none'
+            },
+            dataView: {readOnly: false},
+            magicType: {type: ['line', 'bar']},
+            restore: {},
+            saveAsImage: {}
+        }
+    },
+	settings: {
+	width: '100%',
+	height: '300px',
+	border: '1px solid red'
+  },
+    xAxis:  {
+        type: 'category',
+        boundaryGap: false,
+        data: ['1988','2000','2009','2017']
+    },
+    yAxis: {
+        type: 'value',
+        axisLabel: {
+            formatter: '{value} '
+			
+        }
+		
+    },
+    series: [
+        {
+            name:'Population',
+            type:'line',
+            data:[2.019420,5.117629,9.339734,14.353300],
+        
+    }]
+}
+```
+            </td>
+            <td width="400">
+```chart
+{
+    title: {
+        text: 'Population Avg Change'
+    },
+    tooltip: {
+        trigger: 'axis',
+        axisPointer: {
+            type: 'shadow'
+        }
+    },
+    legend: {
+        data: ['1988-2000', '2000-2009', '2010-2018'],
+		x: "2%",
+		top: '10%'
+    },
+    grid: {
+        left: 100
+    },
+    toolbox: {
+        show: true,
+        feature: {
+            saveAsImage: {}
+        }
+    },
+		settings: {
+	width: '100%',
+	height: '300px',
+	border: '1px solid red'
+  },
+    xAxis: {
+        type: 'value',
+        name: '%',
+        axisLabel: {
+            formatter: '{value}'
+        }
+    },
+    yAxis: {
+        type: 'category',
+        inverse: true,
+        data: ['Chengdu', 'East Asia', 'World'],
+        axisLabel: {
+            formatter: function (value) {
+                return '{' + value + '| }\n{value|' + value + '}';
+            },
+            margin: 20,
+            rich: {
+                value: {
+                    lineHeight: 30,
+                    align: 'center'
+                },
+                Sunny: {
+                    height: 40,
+                    align: 'center'
+                },
+                Cloudy: {
+                    height: 40,
+                    align: 'center'
+                },
+                Showers: {
+                    height: 40,
+                    align: 'center'
+                  
+                }
+            }
+        }
+    },
+    series: [
+        {
+            name: '1988-2000',
+            type: 'bar',
+            data: [7.7, 3.4, 4.5],
+        },
+        {
+            name: '2000-2009',
+            type: 'bar',
+            data: [6.8, 3.4, 4.5]
+        },
+        {
+            name: '2010-2018',
+            type: 'bar',
+            data: [2.21,1.03,1.21]
+        }
+    ]
+}
+```
+            </td>
+        </tr>
+    </table>
 
 
 ## Businesses
