@@ -1,11 +1,15 @@
 <script src="../pkgs/echarts.min.js"></script>
+# <audio autoplay="" loop=""><source src="/_media/chengdu.mp3"></audio>
 # The Exploration of Landscape of Chengdu
 
+
+  
 <html><body><p><font size="4" color="gray">
 The state comes into existence, originating in the bare needs of life, and continuing in existence for the sake of a good life. 
 
 -- The Politics Of Aristotle, by Aristotle
 </font></p></body></html>
+
 
 ## Change in Times
 ### Overview of Economy
@@ -661,8 +665,503 @@ since 2000. Although the increase speed has slowed down since 2010, its populati
         </tr>
     </table>
 
+### Moving To Chengdu!
+<table width="800" style="margin-left: auto; margin-right: auto;">
+        <tr>
+            <td width="400">
+```chart
+{
+	backgroundColor:'#394056',
+	title:{
+	textStyle:{
+		fontWeight:'normal',
+		fontSize:16,
+		color:'#F1F1F3'
+	},
+	left:'6%'
+	},
+	tooltip:{
+		trigger:'axis',
+		axisPointer:{
+			lineStyle:{
+					color:'#57617B'
+			}
+		}
+	},
+	legend:{
+		icon:'rect',
+		itemWidth:14,
+		itemHeight:5,
+		itemGap:13,
+		data:['Belief Index of Development in Chengdu','Happiness Index of Living in Chengdu'],
+		right:'10%',
+		textStyle:{
+			fontSize:12,
+			color:'#F1F1F3'
+		}
+	},
+	grid:{
+		left:'3%',
+		right:'10%',
+		bottom:'3%',
+		containLabel:true
+	},
+	xAxis:[{
+		type:'category',
+		boundaryGap:false,
+		axisLine:{
+			lineStyle:{
+				color:'#57617B'
+			}
+		},
+		data:['2013','2016']
+	}],
+	yAxis:[{
+		type:'value',
+		axisTick:{
+			show:false
+		},
+		axisLine:{
+			lineStyle:{
+				color:'#57617B'
+			}
+		},
+		axisLabel:{
+			margin:10,
+			textStyle:{
+				fontSize:14
+			}
+		},
+		splitLine:{
+			lineStyle:{
+				color:'#57617B'
+			}
+		}
+	}],
+	series:[{
+		name:'Belief Index of Development in Chengdu',
+		type:'line',
+		smooth:true,
+		lineStyle:{
+			normal:{
+				width:1
+			}
+		},
+		areaStyle:{
+			normal:{
+				color: new echarts.graphic.LinearGradient(0,0,0,1,[{
+					offset:0,
+					color:'rgba(137,189,27,0.3)'
+				},{
+					offset:0.8,
+					color:'rgb(137,189,27,0)'}],false
+				),
+				shadowColor:'rgba(0,0,0,0.1)',
+				shadowBlur:10
+			}
+		},
+		itemStyle:{
+			normal:{
+				color:'rgb(137,189,27)'
+			}
+		},
+		data:[36.15,49.89]
+		},
+		{
+		name:'Happiness Index of Living in Chengdu',
+		type:'line',
+		smooth:true,
+		lineStyle:{
+			normal:{
+				width:1
+			}
+		},
+		areaStyle:{
+			normal:{
+				color: new echarts.graphic.LinearGradient(0,0,0,1,[{
+					offset:0,
+					color:'rgba(219,50,51,0.3)'
+				},{
+					offset:0.8,
+					color:'rgb(219,50,51,0)'}],false
+				),
+				shadowColor:'rgba(0,0,0,0.1)',
+				shadowBlur:10
+			}
+		},
+		itemStyle:{
+			normal:{
+				color:'rgb(219,50,51)'
+			}
+		},
+		data:[50.66,68.63]
+		}
+		]
+}
+```
+            </td>
+            <td width="400">
+
+```chart
+{
+	title:{
+		top:'45%',
+		left:'center',
+		text:'Most liked City',
+		textStyle:{
+			color:'#fff',
+			fontStyle: 'normal',
+			fontWeight:'normal',
+			fontSize:14
+		},
+		subtext:'Chengdu' + ' '+ (0.2894*10000/100).toFixed(2) + '%',
+		subtextStyle:{
+			color:'#fff',
+			fontSize:12
+		}
+	},
+	tooltip:{
+		trigger:'item',
+		formatter: function(res){
+			console.log(res)
+			
+			if (res.componentSubType == 'liquidFill'){
+				return res.seriesName + ':' + (res.value*10000/100).toFixed(2) + '%';
+			} else {
+				return '<span class="ii" style="background:' + res.color+'"></span>' + res.name + ':<br/>' + res.data.value;
+			}
+		}
+	},
+	series:[{
+		type:'liquidFill',
+		itemStyle:{
+			normal:{
+				opacity: 0.4,
+				shadowBlur:0,
+				shadowColor:'blue'
+			}
+		},
+		name:'今日',
+		data:[{
+			value: 0.6,
+			itemStyle:{
+				normal:{
+					color:'#53d5ff',
+					opacity:0.6
+				}
+			}
+	}],
+	color:['#53d5ff'],
+	center:['50%','50%'],
+	label:{
+		normal:{
+			formatter:'',
+			textStyle:{
+				fontSize:12
+			}
+		}
+	},
+	outline:{
+		itemStyle:{
+			borderColor:'#86c5ff',
+			borderWidth: 0
+		},
+		borderDistance: 0
+	}
+	},
+	{
+		type:'pie',
+		radius:['42%','50%'],
+			color:['#c487ee','#deb140','#49dff0','#034079','#6f81da','00ffb4'],
+		hoverAnimation:false,
+		label:{
+			show:true,
+			normal:{
+				formatter:'{b}\n{d}%',
+				show:true,
+				position:''
+			},
+		},
+		labelLine:{
+			norma:{
+				show:false
+			}
+		},
+		
+		itemStyle:{
+			normal:{
+				borderWidth:2,
+				borderColor:'#fff',
+			},
+			emphasis:{
+				borderWidth:0,
+				shadowBlur:2,
+				shadowoffsetX:0,
+				shadowColor:'rgba(0,0,0,0.5)'
+			}
+		},
+		data:[
+		{value:0.224,name:'Chengdu'},
+		{value:0.201,name:'Hangzhou'},
+		{value:0.081,name:'Suzhou'},
+		{value:0.078,name:'Xiamen'},
+		{value:0.065,name:'Nanjing'},
+		{value:0.047,name:'Qingdao'},
+		{value:0.041,name:'Chongqing'},
+		{value:0.037,name:'Wuhan'}
+		]
+	}]
+}
+
+```
+            </td>
+        </tr>
+    </table>
+
+
+```chart
+{
+	tooltip:{},
+	toolbox:{
+		show:false
+	},
+	title: {
+        text: 'Sense Index of career development in Chengdu'
+    },
+	series:[{
+		name:"People living in Chengdu",
+		type:'gauge',
+		z:3,
+		min:0,
+		max:100,
+		splitNumber:10,
+		radus:'60%',
+		axisLine:{
+			lineStyle:{
+				width:3
+			}
+		},
+		axisTick:{
+			length:1,
+			lineStyle:{
+				color:'auto'
+			}
+		},
+		splitLine:{
+			length:10,
+			lineStyle:{
+				color:'auto'
+			}
+		},
+		axisLabel:{},
+		title:{
+			fontWeight:'bolder',
+			fontSize: 20,
+			offsetCenter:[0,'80%']
+		},
+		pointer:{
+			width:3
+		},
+		detail:{
+			fontSize:20,
+			offsetCenter:[0,'65%']
+		},
+		data:[{
+			value: 84.58,
+			name:'People In Chengdu'
+		}]
+	},
+	{
+		name:"People in first-tier cities",
+		type:'gauge',
+		center:['80%','55%'],
+		min:0,
+		max:100,
+		startAngle:135,
+		endAngle:-45,
+		splitNumber:5,
+		radus:'45%',
+		axisLine:{
+			lineStyle:{
+				width:2
+			}
+		},
+		axisTick:{
+			length:1,
+			lineStyle:{
+				color:'auto'
+			}
+		},
+		splitLine:{
+			length:8,
+			lineStyle:{
+				color:'auto'
+			}
+		},
+		title:{
+			fontSize: 20,
+			offsetCenter:[0,'80%']
+		},
+		pointer:{
+			width:2
+		},
+		detail:{
+			fontSize:20,
+			offsetCenter:[0,'65%']
+		},
+		data:[{
+			value: 43.37,
+			name:'People in second-tier cities'
+		}]
+	},{
+		name:"People in first-tier cities",
+		type:'gauge',
+		center:['20%','55%'],
+		min:0,
+		max:100,
+		endAngle:45,
+		splitNumber:5,
+		radus:'45%',
+		axisLine:{
+			lineStyle:{
+				width:2
+			}
+		},
+		axisTick:{
+			length:1,
+			lineStyle:{
+				color:'auto'
+			}
+		},
+		splitLine:{
+			length:8,
+			lineStyle:{
+				color:'auto'
+			}
+		},
+		title:{
+			fontSize: 20,
+			offsetCenter:[0,'80%']
+		},
+		pointer:{
+			width:2
+		},
+		detail:{
+			fontSize:20,
+			offsetCenter:[0,'65%']
+		},
+		data:[{
+			value: 53.54,
+			name:'People in first-tier cities'
+		}]
+	}
+	]
+}
+```
+	
+
 
 ## Businesses
+### Overview
+```chart
+{
+	color: ['#5793f3','#d14a61'],    //颜色
+	
+	tooltip:{
+		trigger:'axis',
+		axisPointer:{type:'cross'}
+	},
+	grid:{
+		right:'10%'
+	},
+	toolbox:{
+		feature:{
+			dataView:{show:true,readOnly:false},
+			restore:{show:true},
+			saveAsImage:{show:true}
+		}
+	},
+	legend:{
+		data:['社会商品零售总额（亿元）','货物进出口总额（百万美元）']
+	},
+	xAxis:[
+		{
+			type:'category',
+			axisTick:{
+				alignWithLabel:true
+			},
+			data:['2009','2010','2011','2012','2013','2014','2015','2016','2017']
+		}
+	],
+	yAxis:[{
+		type:'value',
+		name:'零售（亿元）',
+		min: 0,
+		max: 8000,
+		position:'right',
+		axisLine:{
+			lineStyle:{
+				color:'#5793f3'
+			}
+		},
+		axisLabel:{
+			formatter:'{value}'
+		}
+		},
+		{type:'value',
+		name:'进出口（百万美元）',
+		min: 0,
+		max: 60000,
+		position:'left',
+		//offset:80,
+		axisLine:{
+			lineStyle:{
+				color:'#d14a61'
+			}
+		},
+		axisLabel:{
+			formatter:'{value}'
+		}
+		}
+		
+	],
+	series:[
+	{
+		name:'社会商品零售总额（亿元）',
+		type:'line',
+		data:[
+		1949.9,
+		2417.6,
+		2861.3,
+		3317.7,
+		3752.9,
+		4468.9,
+		4969.2,
+                                5742.4,
+                                6403.5
+		]
+	},
+	{
+		name:'货物进出口总额（百万美元）',
+		type:'line',
+		yAxisIndex:1,
+		data:[
+		17863,
+		22449,
+		37906,
+		47539,
+		50585,
+		55844,
+		39531,
+                                41008,
+                                58315
+		]
+	},
+	]
+}
+```
+
+
 ### What about tech? 
 ### A short look at the taxi industry.
 
